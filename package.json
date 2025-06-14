@@ -1,0 +1,23 @@
+{
+  "name": "finsweet",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/RafaelTagiev/finsweet#readme",
+  "bugs": {
+    "url": "https://github.com/RafaelTagiev/finsweet/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RafaelTagiev/finsweet.git"
+  },
+  "license": "ISC",
+  "author": "Rafael Tagiev",
+  "type": "commonjs",
+  "main": "index.html",
+  "scripts": {
+    "sass:watch": "sass --style=expanded --watch styles:dist"
+  },
+  "dependencies": {
+    "sass": "^1.89.2"
+  }
+}
