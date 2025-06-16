@@ -1,0 +1,35 @@
+@use "variables" as v;
+@use "mixin" as m;
+
+.offer__card {
+    width: 316px;
+    height: 232px;
+    background-color: v.$white;
+    transition: all .3s;
+
+    @include m.d-flex(center, center, nowrap, column, 0, 0);
+
+    &:hover {
+        background-color: v.$primary;
+
+        .offer__card-image-box svg path {
+            fill: v.$white;
+        }
+
+        .offer__card-title {
+            color: v.$white;
+        }
+    }
+
+    &-image-box svg path {
+        transition: all .3s;
+    }
+
+    &-title {
+        margin-top: 16px;
+        transition: all .3s;
+
+        @include m.font(24px, 600, v.$black, 1.5);
+        letter-spacing: -0.03em;
+    }
+}

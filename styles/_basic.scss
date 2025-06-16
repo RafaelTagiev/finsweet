@@ -77,3 +77,38 @@ body {
         scale: 1.1;
     }
 }
+
+.heading {
+
+    &-subtitle {
+        @include m.font(24px, 600, v.$black, 1.5);
+        letter-spacing: -0.03em;
+    }
+
+    &-title {
+        @include m.font(58px, 800, v.$black, 1.3);
+        letter-spacing: -0.03em;
+    }
+
+    @media (max-width: v.$media_xxl) {
+        &-subtitle {
+            @include m.font(18px, 600, v.$black, 1.5);
+
+        }
+
+        &-title {
+            @include m.font(40px, 800, v.$black, 1.3);
+        }
+    }
+
+    @media (max-width: v.$media_xl) {
+        &-subtitle {
+            @include m.font(16px, 600, v.$black, 1.5);
+
+        }
+
+        &-title {
+            @include m.font(32px, 800, v.$black, 1.3);
+        }
+    }
+}

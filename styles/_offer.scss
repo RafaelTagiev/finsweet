@@ -1,0 +1,64 @@
+@use "variables" as v;
+@use "mixin" as m;
+
+.offer-section {
+    background-color: v.$light-grey;
+
+    .offer {
+        padding: 128px 0;
+
+        &__heading {
+            max-width: 858px;
+            margin: 0 auto;
+            text-align: center;
+
+            @media (max-width: v.$media_xl) {
+                max-width: 605px;
+            }
+
+            @media (max-width: v.$media_xxl) {
+                max-width: 475px;
+            }
+        }
+
+        &__grid {
+            margin-top: 64px;
+            display: grid;
+            grid-template: repeat(2, 232px) / repeat(4, 316px);
+            justify-content: center;
+            justify-items: center;
+            gap: 8px;
+
+            @media (max-width: v.$media_xxl) {
+                grid-template: repeat(3, 232px) / repeat(3, 316px);
+            }
+
+            @media (max-width: v.$media_lg) {
+                grid-template: repeat(4, 232px) / repeat(2, 316px);
+            }
+
+            @media (max-width: v.$media_md) {
+                grid-template: repeat(8, 232px) / repeat(1, 316px);
+            }
+        }
+
+        &__about {
+            position: relative;
+            margin: 32px 15px 0 0;
+            padding-right: 60px;
+            transition: all .3s;
+
+            @include m.d-flex(end, center);
+            @include m.font(18px, 600, v.$black, 1.75);
+
+            &::after {
+                content: "";
+                background: url(../assets/image/icons/arrow-right-icon.svg);
+                width: 53px;
+                height: 16px;
+
+                @include m.pos(absolute, 1, -1, top, right, 8px, -16px);
+            }
+        }
+    }
+}
