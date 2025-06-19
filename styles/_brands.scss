@@ -1,0 +1,26 @@
+@use "variables" as v;
+@use "mixin" as m;
+
+.brands-section {
+    background-color: v.$steelgrey;
+
+    .brands {
+        padding: 128px 0;
+
+        &-title {
+            text-align: center;
+        }
+
+        &__logos {
+            margin-top: 30px;
+
+            @include m.d-flex(center, center, wrap, 38px, 38px);
+
+            &-item {
+                padding: 47px 27px;
+                width: 225px;
+                height: 127px;
+            }
+        }
+    }
+}
