@@ -1,0 +1,143 @@
+@use "variables" as v;
+@use "mixin" as m;
+
+.process-section {
+
+    .process {
+        padding: 134px 0;
+
+        @include m.d-flex(start, start, nowrap, row, 0, 0);
+
+        &__about {
+
+            &-title {
+                max-width: 524px;
+            }
+
+            &-text {
+                margin-top: 16px;
+                opacity: 0.6;
+                max-width: 437px;
+
+                @include m.font(16px, 600, v.$black, 1.75);
+            }
+
+            &-button {
+                width: 177px;
+                margin-top: 32px;
+            }
+
+        }
+
+        &__steps {
+            max-width: 432px;
+            margin-left: 130px;
+
+            .process__step {
+                margin-bottom: 16px;
+
+                &:last-child {
+                    margin-bottom: 0;
+
+                    .process__step-text::before {
+                        display: none;
+                    }
+                }
+
+                &-title {
+                    position: relative;
+                    display: inline-block;
+                    letter-spacing: -0.03em;
+                    margin-left: 36px;
+                    padding-left: 60px;
+
+                    @include m.font(32px, 700, v.$black, 1.5);
+
+                    @media (max-width: v.$media_xl) {
+                        @include m.font(28px, 700, v.$black, 1.5);
+                    }
+
+                    &::before {
+                        content: "00";
+                        overflow: hidden;
+                        width: 72px;
+                        height: 72px;
+                        background-color: v.$secondary;
+                        border-radius: 100%;
+                        text-align: center;
+                        padding-top: 10px;
+                        z-index: 0;
+
+                        @include m.font(32px, 700, v.$white, 1.5);
+                        @include m.pos(absolute, 1, -1, top, left, -10px, -39px);
+
+                    }
+
+                    &::after {
+                        content: "";
+                        width: 42px;
+                        height: 42px;
+                        border-radius: 100%;
+                        background: white;
+                        opacity: 0.24;
+
+                        @include m.pos(absolute, 10, -1, bottom, left, -34px, -23px);
+                    }
+                }
+
+                &-text {
+                    position: relative;
+                    max-width: 396px;
+                    margin: 8px 0 0 36px;
+                    padding-left: 60px;
+                    opacity: 0.6;
+
+                    @include m.font(18px, 700, v.$black, 1.75);
+
+                    &::before {
+                        content: "";
+                        width: 2px;
+                        height: 71px;
+                        border: 2px dashed v.$primary;
+
+                        @include m.pos(absolute, 10, -1, bottom, left, 10%, -2px);
+                    }
+
+                    @media (max-width: v.$media_sm) {
+                        max-width: 220px;
+
+                        &::before {
+                            height: 120px;
+                        }
+                    }
+                }
+            }
+
+            .process__step-first {
+                .process__step-title::before {
+                    content: "01";
+                }
+            }
+
+            .process__step-second {
+                .process__step-title::before {
+                    content: "02";
+                }
+            }
+
+            .process__step-third {
+                .process__step-title::before {
+                    content: "03";
+                }
+            }
+        }
+
+        @media (max-width: v.$media_lg) {
+            @include m.d-flex(start, start, nowrap, column, 0, 60px);
+
+            &__steps {
+                margin-left: 0;
+            }
+        }
+    }
+}
