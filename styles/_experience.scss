@@ -1,0 +1,28 @@
+@use "variables" as v;
+@use "mixin" as m;
+
+.experience-section {
+
+    .experience {
+        padding: 48px 0;
+
+        &__list {
+            @include m.d-flex(space-between, center, nowrap, row, 15px, 0);
+
+            @media (max-width: v.$media_sm) {
+                @include m.d-flex(center, start, nowrap, column, 0, 15px);
+            }
+
+            &-item {
+
+                .experience__item-title {
+                    color: v.$secondary;
+                }
+
+                .experience__item-subtitle {
+                    opacity: 0.7;
+                }
+            }
+        }
+    }
+}
