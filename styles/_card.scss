@@ -81,3 +81,61 @@
         @include m.font(16px, 600, v.$black, 1.75);
     }
 }
+
+.testimonials__card {
+    width: 616px;
+    height: 376px;
+    padding: 72px;
+    background-color: v.$white;
+
+    @media (max-width: v.$media_xxl) {
+        &--hide {
+            display: none;
+        }
+    }
+
+    @media (max-width: v.$media_md) {
+        width: 456px;
+        height: auto;
+        padding: 25px;
+    }
+
+    &-avatar {
+        display: inline-block;
+        width: 64px;
+        height: 64px;
+        border-radius: 100%;
+        overflow: hidden;
+
+        & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &-who {
+        display: inline-block;
+        width: 179px;
+        height: 62px;
+        margin-left: 16px;
+
+        &-name {
+            letter-spacing: -0.03em;
+
+            @include m.font(24px, 600, v.$black, 1.5);
+        }
+
+        &-city {
+            @include m.font(16px, 600, v.$grey, 1.75);
+        }
+    }
+
+
+    &-comment {
+        margin-top: 24px;
+        letter-spacing: -0.03em;
+
+        @include m.font(24px, 600, v.$black, 1.5);
+    }
+}
