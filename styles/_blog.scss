@@ -1,0 +1,55 @@
+@use "variables" as v;
+@use "mixin" as m;
+
+.blog-section {
+    padding: 130px 0;
+
+    .blog {
+
+        .blog__heading {
+            @media (max-width: v.$media_lg) {
+                text-align: center;
+            }
+        }
+
+        .blog__body {
+
+            .blog__filter-list {
+                margin-top: 46px;
+
+                @include m.d-flex(start, center, nowrap, row, 30px, 0);
+
+                @media (max-width: v.$media_lg) {
+                    @include m.d-flex(center, center, wrap, row, 30px, 0);
+                }
+
+                .blog__filter-item {
+
+                    .blog__filter-btn {
+                        letter-spacing: -0.03em;
+
+                        @include m.font(32px, 700, v.$black, 1.5);
+
+                        @media (max-width: v.$media_xxl) {
+                            @include m.font(26px, 700, v.$black, 1.5);
+                        }
+
+                        @media (max-width: v.$media_xl) {
+                            @include m.font(24px, 700, v.$black, 1.5);
+                        }
+                    }
+                }
+            }
+
+            .blog__card-box {
+                margin-top: 46px;
+
+                @include m.d-flex(start, center, wrap, row, 31px, 64px);
+
+                @media (max-width: v.$media_lg) {
+                    @include m.d-flex(center, center, wrap, column, 30px, 0);
+                }
+            }
+        }
+    }
+}

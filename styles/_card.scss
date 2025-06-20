@@ -33,3 +33,51 @@
         letter-spacing: -0.03em;
     }
 }
+
+.blog__card {
+    width: 406px;
+    height: 606px;
+
+    @media (max-width: v.$media_sm) {
+        width: 280px;
+    }
+
+    &-image-box {
+        width: 406px;
+        height: 266px;
+        overflow: hidden;
+
+        & img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        @media (max-width: v.$media_sm) {
+            width: 280px;
+        }
+    }
+
+    &-date {
+        margin-top: 24px;
+
+        @include m.font(16px, 600, v.$grey, 1.75);
+
+    }
+
+    &-title {
+        margin-top: 16px;
+
+        @include m.font(32px, 700, v.$black, 1.5);
+
+        @media (max-width: v.$media_xxl) {
+            @include m.font(24px, 700, v.$black, 1.5);
+        }
+    }
+
+    &-text {
+        margin-top: 16px;
+
+        @include m.font(16px, 600, v.$black, 1.75);
+    }
+}
