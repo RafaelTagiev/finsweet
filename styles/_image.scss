@@ -1,0 +1,25 @@
+@use "variables" as v;
+@use "mixin" as m;
+
+.image-section {
+    display: block;
+    width: 100%;
+    height: 448px;
+    resize: both;
+    margin-top: -280px;
+    background: url(../assets/image/content/footer-image.jpg) center / cover no-repeat;
+
+    @media (max-width: v.$media_xl) {
+        margin-top: -210px;
+    }
+
+    @media (max-width: v.$media_md) {
+        margin-top: -150px;
+        height: 324px;
+    }
+
+    @media (max-width: v.$media_xs) {
+        margin-top: -100px;
+        height: 224px;
+    }
+}
