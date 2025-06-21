@@ -1,0 +1,67 @@
+@use "variables" as v;
+@use "mixin" as m;
+
+.faq-section {
+    padding: 128px 0;
+    background-color: v.$steelgrey;
+
+    .faq {
+
+        &_heading {
+            max-width: 760px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        &__list {
+            margin-top: 86px;
+
+            &-item {
+                max-width: 896px;
+                min-height: 112px;
+                margin: 0 auto 12px;
+                padding: 40px;
+                background-color: v.$white;
+
+                &:last-child {
+                    margin: 0 auto;
+                }
+
+                &[open] .faq-question::before {
+                    content: "-";
+                }
+
+                .faq-question {
+                    position: relative;
+                    padding-right: 100px;
+                    letter-spacing: -0.03em;
+                    list-style: none;
+                    
+                    @include m.font(24px, 600, v.$black, 1.5);
+                    
+                    &::before {
+                        content: "+";
+                        width: 50px;
+                        height: 50px;
+                        color: v.$white;
+                        background-color: v.$primary;
+                        margin-left: 15px;
+
+                        @include m.d-flex(center, center);
+                        @include m.pos(absolute, 1, -1, top, right, -7px, 0);
+                        @include m.font(36px, 500, v.$white);
+                    }
+
+                }
+
+                .faq-answer {
+                    max-width: 700px;
+                    padding-right: 100px;
+                    letter-spacing: -0.03em;
+
+                    @include m.font(18px, 500, v.$grey, 1.75);
+                }
+            }
+        }
+    }
+}
